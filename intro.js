@@ -34,7 +34,7 @@ import Home from './pages/home';
 
     await dependencies();
 
-    const page = window.location.pathname.match(/\/64i\/([a-z0-9]+).html/)[1];
+    const page = window.location.pathname.match(/\/website\/([a-z0-9]+).html/)[1];
 
     switch(page) {
         case `index`: {
