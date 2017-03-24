@@ -6,7 +6,7 @@ import {
 
 // const createEase = () => new Ease(BezierEasing(0, 1.01, .48, 1));
 
-export default async () => {
+export default async() => {
     document.body.classList.add(`home`);
 
     const tl = new TimelineLite();
@@ -34,8 +34,13 @@ export default async () => {
             opacity: 1
         }, .1)
         .fromTo(blurb, 1, {
+            ease: Strong.easeInOut,
+            filter: `blur(20px)`,
+            transform: `translate3d(0, 3vh, 0)`,
             opacity: 0
         }, {
+            transform: `translate3d(0, 0, 0)`,
+            filter: `blur(0)`,
             opacity: 1
-        })
+        });
 };
