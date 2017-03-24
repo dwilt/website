@@ -20,10 +20,13 @@ export default async() => {
 
     homeLogoContainer.appendChild(logo);
 
-    logo.classList.add(`show`);
-
     tl
-        .staggerFromTo(navLinks, 8, {
+        .to(logo, .5, {
+            opacity: 1,
+            filter: `blur(0)`,
+            transform: `scale(1)`,
+        })
+        .staggerFromTo(navLinks, .5, {
             ease: Strong.easeInOut,
             filter: `blur(20px)`,
             transform: `translate3d(0, 3vh, 0)`,
