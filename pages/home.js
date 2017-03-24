@@ -23,7 +23,7 @@ export default async() => {
     logo.classList.add(`show`);
 
     tl
-        .staggerFromTo(navLinks, .5, {
+        .staggerFromTo(navLinks, 8, {
             ease: Strong.easeInOut,
             filter: `blur(20px)`,
             transform: `translate3d(0, 3vh, 0)`,
