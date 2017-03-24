@@ -6,5 +6,5 @@
   
 ## To do work
 
-1. Inside of the root directory, run `webpack -w`
+1. Inside of the root directory, run `webpack -w`. As you save files, JS bundle will be recreated. Just hit refresh. No hot loading yet. Don't be so impatient.
 2. Get the fuck to work
