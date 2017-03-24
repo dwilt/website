@@ -39,17 +39,25 @@
             body {
                 height: 100%;
                 position: relative;
+                -webkit-font-smoothing: antialiased;
             }
 
             body {
                 margin: 0;
                 animation: fadeBG 1s cubic-bezier(0, 1.01, .48, 1) forwards;
+                font-family: "Roboto", sans-serif;
             }
 
             .logo-container {
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
+                align-items: center;
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                top: 0;
             }
 
             .logo {
@@ -57,12 +65,9 @@
             }
 
             .logo.intro {
-                width: 30vw;
-                height: 30vw;
-                position: absolute;
-                left: 50%;
-                top: 50%;
-                margin: -15vw 0 0 -15vw;
+                width: 25vw;
+                height: auto;
+                max-width: 25vh;
             }
 
             .logo.show {
@@ -102,9 +107,23 @@
         </div>
         <section id="home">
             <style scoped>
+                body.home {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+                
+                .home-logo-container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    margin-bottom: 5vh;
+                }
+
                 .logo {
-                    width: 50px;
-                    height: 50px;
+                    width: 14vw;
+                    height: 14vw;
                 }
                 
                 .navigation {
@@ -118,18 +137,28 @@
                     font-size: 6vw;
                     font-family: Kanit;
                     text-decoration: none;
-                    margin-right: 20px;
+                    margin-right: 5vw;
                     opacity: 0;
-                    filter: blur(5px);
-                    transform: scale(.3);
                 }
 
                 .navigation :last-child {
                     margin-right: 0;
                 }
 
+                .blurb-container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                }
+
                 .blurb {
                     opacity: 0;
+                    text-align: center;
+                    color: white;
+                    font-size: 2vw;
+                    line-height: 2.5vw;
+                    max-width: 60vw;
+                    margin-top: 5vh;
                 }
 
                 .social {
@@ -147,7 +176,9 @@
                 </nav>
             </div>
             <div class="bottom">
-                <div class="blurb">At Sixty Four Interactive, we develop native apps and modern web experiences for tech startups and agencies.</div>
+                <div class="blurb-container">
+                    <p class="blurb">At 64 Interactive, we develop native apps and modern web experiences for tech startups and agencies.</p>
+                </div>
                 <div class="social">
                     <a class="social-item twitter" href="#"></a>
                     <li class="social-item facebook"></li>
