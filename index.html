@@ -21,6 +21,20 @@
                 }
             }
 
+            @keyframes hideLogo {
+                from {
+                    opacity: 1;
+                    filter: blur(0);
+                    transform: scale(1);
+                }
+
+                to {
+                    opacity: 0;
+                    filter: blur(20px);
+                    transform: scale(2);
+                }
+            }
+
             html,
             body {
                 height: 100%;
@@ -29,7 +43,7 @@
 
             body {
                 margin: 0;
-                animation: fadeBG 2s cubic-bezier(0, 1.01, .48, 1) .5s forwards;
+                animation: fadeBG 1s cubic-bezier(0, 1.01, .48, 1) forwards;
             }
 
             .logo-container {
@@ -40,23 +54,36 @@
 
             .logo {
                 display: block;
-                transform: scale(.5);
-                opacity: 0;
-                filter: blur(20px);
+            }
+
+            .logo.intro {
                 width: 30vw;
                 height: 30vw;
-                animation: showLogo 2.5s cubic-bezier(0, 1.01, .48, 1) 2s forwards;
                 position: absolute;
                 left: 50%;
                 top: 50%;
                 margin: -15vw 0 0 -15vw;
+            }
+
+            .logo.show {
+                animation: showLogo 1s cubic-bezier(0, 1.01, .48, 1) forwards;
+            }
+
+            .logo.hidden {
+                transform: scale(.5);
+                opacity: 0;
+                filter: blur(20px);
+            }
+
+            .logo.hide {
+                animation: hideLogo 1s cubic-bezier(0, 1.01, .48, 1) forwards;
             }
         </style>
         <script async src="dist/bundle.js"></script>
     </head>
     <body>
         <div class="logo-container">
-            <svg class="logo" x="0px" y="0px" viewBox="0 0 150 150">
+            <svg class="logo hidden show intro" x="0px" y="0px" viewBox="0 0 150 150">
                 <style type="text/css">
                     .circles {
                         fill: #FFFFFF;
@@ -75,6 +102,11 @@
         </div>
         <section id="home">
             <style scoped>
+                .logo {
+                    width: 50px;
+                    height: 50px;
+                }
+                
                 .navigation {
                     display: flex;
                     flex-direction: row;
@@ -106,6 +138,7 @@
                 
             </style>
             <div class="top">
+                <div class="home-logo-container"></div>
                 <nav role="navigation" class="navigation">
                     <a href="/work" data-nav-link>Work</a>
                     <a href="/about" data-nav-link>About</a>

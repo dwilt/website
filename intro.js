@@ -4,39 +4,37 @@ import {
 
 import Home from './pages/home';
 
-(async () => {
-
-    const logoAnimation = new Promise(resolve => {
+(async() => {
+    const logoAnimation = () => new Promise(resolve => {
+        const logoContainer = document.querySelector(`.logo-container`);
         const logo = document.querySelector(`.logo`);
 
         logo.addEventListener(`animationend`, ({ animationName }) => {
-            if(animationName === `showLogo`) {
-                // overwrite CSS centering
-                const width = logo.clientWidth;
-                const height = logo.clientHeight;
-                const windowWidth = window.innerWidth;
-                const windowHeight = window.innerHeight;
-
-                logo.style.margin = 0;
-                logo.style.left = (windowWidth / 2) - (width / 2);
-                logo.style.top = (windowHeight / 2) - (height / 2);
-                
+            if (animationName === `hideLogo`) {
+                logoContainer.style.display = `none`;
+                logo.classList.add(`hidden`);
+                logo.classList.remove(`intro`, `hide`, `show`);
                 resolve();
             }
         });
+
+        logo.classList.add(`hide`);
     });
 
-    
     const dependencies = () => Promise.all([
         document.fonts.ready,
-        logoAnimation
+        new Promise(resolve => {
+            setTimeout(resolve, 1000)
+        })
     ]);
 
     await dependencies();
 
+    await logoAnimation();
+
     const page = window.location.pathname.match(/\/website\/([a-z0-9]+).html/)[1];
 
-    switch(page) {
+    switch (page) {
         case `index`: {
             Home();
         }
