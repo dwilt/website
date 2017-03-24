@@ -38,5 +38,8 @@ import Home from './pages/home';
         case `index`: {
             Home();
         }
+
+        default:
+            Home();
     }
 })();
