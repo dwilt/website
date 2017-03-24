@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -6113,7 +6113,7 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
 						if (global) {
 							_globals[n] = _exports[n] = cl; //provides a way to avoid global namespace pollution. By default, the main classes like TweenLite, Power1, Strong, etc. are added to window unless a GreenSockGlobals is defined. So if you want to have things added to a custom object instead, just do something like window.GreenSockGlobals = {} before loading any GreenSock files. You can even set up an alias like window.GreenSockGlobals = windows.gs = {} so that you can access everything like gs.TweenLite. Also remember that ALL classes are added to the window.com.greensock object (in their respective packages, like com.greensock.easing.Power1, com.greensock.TweenLite, etc.)
 							hasModule = (typeof(module) !== "undefined" && module.exports);
-							if (!hasModule && "function" === "function" && __webpack_require__(1)){ //AMD
+							if (!hasModule && "function" === "function" && __webpack_require__(2)){ //AMD
 								!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function() { return cl; }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
 				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 							} else if (hasModule){ //node
@@ -7928,10 +7928,45 @@ if (_gsScope._gsDefine) { _gsScope._gsQueue.pop()(); } //necessary in case Tween
 		_tickerActive = false; //ensures that the first official animation forces a ticker.tick() to update the time when it is instantiated
 
 })((typeof(module) !== "undefined" && module.exports && typeof(global) !== "undefined") ? global : this || window, "TweenMax");
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
 
 /***/ }),
 /* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gsap__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gsap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_gsap__);
+
+
+/* harmony default export */ __webpack_exports__["a"] = () => {
+    const tl = new __WEBPACK_IMPORTED_MODULE_0_gsap__["TimelineLite"]();
+
+    const logo = document.querySelector(`.logo`);
+    const logoContainer = document.querySelector(`.logo-container`);
+    const navigation = document.querySelector(`.navigation`);
+    const navLinks = document.querySelectorAll(`.navigation a`);
+
+    tl
+        .to(logo, .5, {
+            ease: __WEBPACK_IMPORTED_MODULE_0_gsap__["Strong"].easeInOut,
+            top: 50,
+            onComplete: () => {
+                logoContainer.style.paddingTop = `50px`;
+                logo.style.position = 'static';
+            }
+        })
+        .staggerTo(navLinks, 2, {
+            ease: __WEBPACK_IMPORTED_MODULE_0_gsap__["Strong"].easeInOut,
+            filter: `blur(0)`,
+            transform: `scale(1)`,
+            opacity: 1
+        }, .25);
+
+};
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports) {
 
 /* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
@@ -7940,7 +7975,7 @@ module.exports = __webpack_amd_options__;
 /* WEBPACK VAR INJECTION */}.call(exports, {}))
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports) {
 
 var g;
@@ -7967,14 +8002,14 @@ module.exports = g;
 
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gsap__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gsap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_gsap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_home__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pages_home__ = __webpack_require__(1);
 
 
 
@@ -8017,41 +8052,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     }
 })();
-
-/***/ }),
-/* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gsap__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gsap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_gsap__);
-
-
-/* harmony default export */ __webpack_exports__["a"] = () => {
-    const tl = new __WEBPACK_IMPORTED_MODULE_0_gsap__["TimelineLite"]();
-
-    const logo = document.querySelector(`.logo`);
-    const logoContainer = document.querySelector(`.logo-container`);
-    const navigation = document.querySelector(`.navigation`);
-    const navLinks = document.querySelectorAll(`.navigation a`);
-
-    tl
-        .to(logo, .5, {
-            ease: __WEBPACK_IMPORTED_MODULE_0_gsap__["Strong"].easeInOut,
-            top: 50,
-            onComplete: () => {
-                logoContainer.style.paddingTop = `50px`;
-                logo.style.position = 'static';
-            }
-        })
-        .staggerTo(navLinks, 2, {
-            ease: __WEBPACK_IMPORTED_MODULE_0_gsap__["Strong"].easeInOut,
-            filter: `blur(0)`,
-            transform: `scale(1)`,
-            opacity: 1
-        }, .25);
-
-};
 
 /***/ })
 /******/ ]);
