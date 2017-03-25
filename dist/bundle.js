@@ -7981,6 +7981,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 (async() => {
+
+    console.log('intro animation start');
+
     const logoAnimation = () => new Promise(resolve => {
         const logoContainer = document.querySelector(`.logo-container`);
         const logo = document.querySelector(`.logo`);
@@ -7994,7 +7997,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         });
 
+        console.log('intro animation end');
+
         logo.classList.add(`hide`);
+        console.log('add hide class');
     });
 
     const dependencies = () => Promise.all([

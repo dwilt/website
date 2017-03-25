@@ -5,6 +5,9 @@ import {
 import Home from './public/scripts/pages/home';
 
 (async() => {
+
+    console.log('intro animation start');
+
     const logoAnimation = () => new Promise(resolve => {
         const logoContainer = document.querySelector(`.logo-container`);
         const logo = document.querySelector(`.logo`);
@@ -18,7 +21,10 @@ import Home from './public/scripts/pages/home';
             }
         });
 
+        console.log('intro animation end');
+
         logo.classList.add(`hide`);
+        console.log('add hide class');
     });
 
     const dependencies = () => Promise.all([
