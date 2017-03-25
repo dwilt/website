@@ -24,7 +24,7 @@ import Home from './public/scripts/pages/home';
     const dependencies = () => Promise.all([
         document.fonts.ready,
         new Promise(resolve => {
-            setTimeout(resolve, 1000)
+            setTimeout(resolve, 4000)
         })
     ]);
 

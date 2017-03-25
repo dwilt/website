@@ -8000,7 +8000,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     const dependencies = () => Promise.all([
         document.fonts.ready,
         new Promise(resolve => {
-            setTimeout(resolve, 1000)
+            setTimeout(resolve, 4000)
         })
     ]);
 

@@ -63,7 +63,14 @@ body {
 }
 
 .logo .characters {
-    fill: #2D2E2C;
+    fill: #2D2E2B;
+}
+
+
+.logo.hidden {
+transform: scale(.5);
+opacity: 0;
+filter: blur(20px);
 }
 
 .logo.intro {
@@ -74,14 +81,11 @@ body {
 
 .logo.show {
     animation: showLogo 1s cubic-bezier(0, 1.01, .48, 1) forwards;
+    outline: 1px solid red;
 }
 
-.logo.hidden {
-    transform: scale(.5);
-    opacity: 0;
-    filter: blur(20px);
-}
 
 .logo.hide {
     animation: hideLogo 1s cubic-bezier(0, 1.01, .48, 1) forwards;
+    outline: 1px solid green;
 }
