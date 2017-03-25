@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Kanit:100');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,800');
+
+@keyframes fadeBG {
+    to {
+        background-color: #2D2E2B;
+    }
+}
+
+@keyframes showLogo {
+    to {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1);
+    }
+}
+
+@keyframes hideLogo {
+    from {
+        opacity: 1;
+        filter: blur(0);
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        filter: blur(20px);
+        transform: scale(2);
+    }
+}
+
+html,
+body {
+    height: 100%;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    margin: 0;
+    animation: fadeBG 1s cubic-bezier(0, 1.01, .48, 1) forwards;
+    font-family: "Roboto", sans-serif;
+}
+
+.logo-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.logo {
+    display: block;
+}
+
+.logo .circles {
+    fill: #FFFFFF;
+}
+
+.logo .characters {
+    fill: #2D2E2C;
+}
+
+.logo.intro {
+    width: 25vw;
+    height: auto;
+    max-width: 25vh;
+}
+
+.logo.show {
+    animation: showLogo 1s cubic-bezier(0, 1.01, .48, 1) forwards;
+}
+
+.logo.hidden {
+    transform: scale(.5);
+    opacity: 0;
+    filter: blur(20px);
+}
+
+.logo.hide {
+    animation: hideLogo 1s cubic-bezier(0, 1.01, .48, 1) forwards;
+}

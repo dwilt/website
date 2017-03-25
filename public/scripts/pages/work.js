@@ -4,7 +4,7 @@ import {
     Strong
 } from 'gsap';
 
-// const createEase = () => new Ease(BezierEasing(0, 1.01, .48, 1));
+import fetchUrl from 'fetch-promise';
 
 export default async() => {
     document.body.classList.add(`home`);
@@ -19,6 +19,22 @@ export default async() => {
     const logo = document.querySelector(`.logo`);
 
     homeLogoContainer.appendChild(logo);
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', async e => {
+            e.preventDefault();
+
+            const location = window.location.host;
+            const href = link.attributes.href.value;
+            const url = `http://${location}/api${href}`;
+
+            console.log(url);
+
+            const res = await fetchUrl(url);
+
+            console.log(res);
+        });
+    });
 
     tl
         .to(logo, .5, {

@@ -1,6 +1,10 @@
 module.exports = {
     entry: './intro.js',
     output: {
-        filename: './dist/bundle.js'
+        filename: './public/bundle.js'
+    },
+    node: {
+        dns: 'mock',
+        net: 'mock'
     }
 };

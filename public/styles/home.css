@@ -1,0 +1,57 @@
+body.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-logo-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 5vh;
+}
+
+.logo {
+    width: 14vw;
+    height: 14vw;
+}
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.navigation a {
+    color: white;
+    font-size: 6vw;
+    font-family: Kanit;
+    text-decoration: none;
+    margin-right: 5vw;
+    opacity: 0;
+}
+
+.navigation :last-child {
+    margin-right: 0;
+}
+
+.blurb-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.blurb {
+    opacity: 0;
+    text-align: center;
+    color: white;
+    font-size: 2vw;
+    line-height: 2.5vw;
+    max-width: 60vw;
+    margin-top: 5vh;
+}
+
+.social {
+    display: none;
+}
