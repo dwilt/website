@@ -2,7 +2,7 @@ import {
     TweenLite
 } from 'gsap';
 
-import Home from './pages/home';
+import Home from './public/scripts/pages/home';
 
 (async() => {
     const logoAnimation = () => new Promise(resolve => {
@@ -32,14 +32,11 @@ import Home from './pages/home';
 
     await logoAnimation();
 
-    const page = window.location.pathname.match(/\/website\/([a-z0-9]+).html/)[1];
+    const page = window.location.pathname;
 
     switch (page) {
-        case `index`: {
+        case `/`: {
             Home();
         }
-
-        default:
-            Home();
     }
 })();
